@@ -1,6 +1,10 @@
+// https://www.youtube.com/watch?v=dzUc9vrsldM&t=90s
+//Philipp Lackner
+
+
+
+
 //print hello world and create function
-
-
 fun main() {
     println("HelloWorld!")
 
