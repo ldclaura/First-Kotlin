@@ -49,4 +49,7 @@ fun main() {
     println(d)
     d++ //shorthand for d + 1 aka 11, can't be used on val, only var.
     println(d)
+
+    println("Comparison Operators")
+    //23:10
 }
