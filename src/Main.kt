@@ -126,4 +126,23 @@ fun main() {
 
     println("If conditions")
     //47:37
+    if(inputToInt == 1) {
+        println("You put in 1 on the first input")
+    } else {
+        println("You did not put in 1 on the first input")
+    }
+    if(inputToInt != null) {
+        val input1even = inputToInt % 2 == 0
+        println("Is even? $input1even")
+        if(input1even) {
+            println("Yay, it's even!")
+        } else {
+            println("Nooo it's odd!!!")
+        }
+        println("OR YOU COULD DO")
+        if(!input1even) { //if input1even == false
+            println("The number is odd $input1even")
+        }
+    }
+
 }
