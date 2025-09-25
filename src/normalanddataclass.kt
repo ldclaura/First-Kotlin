@@ -47,6 +47,10 @@ fun main() {
         height = 10f
     )
     val circle = Circle(radius = 5f)
+    val rectangleshape = RectangleShape(10f, 10f)
+    val circleshape = CircleShape(10f)
+
+
     //classes by default are comparable
     //but even if u give exact same values, they won't be the same.
     //classes are not compared based on their contents.
@@ -60,6 +64,7 @@ fun main() {
     println("data class: $rect4")
     println(circle.area)
 }
+
 
 //CREATE CLASS
 class Rectangle(val width: Int, val height: Int) //what is inside () is called CONSTRUCTOR of the class
@@ -86,5 +91,47 @@ data class Rectangle3(val width: Float, val height: Float) { //needed to import 
 }
 data class Circle(val radius: Float) {
     val area = radius * radius * PI //kotlin already has PI
+    val diameter = 2 * radius
+}
+
+
+
+//INTERFACES
+//a way to define a contract for a class
+//outlines what a shape needs to offer in terms of functionality and variables
+
+fun sumAreas(vararg shapes: Shape): Double {
+    return shapes.sumOf { currentShape ->
+        currentShape.area.toDouble()
+    //sumof returns double,not float, so it all has to return double.
+
+    }
+}
+//CREATE INTERFACE
+interface Shape {
+    val area: Float
+    val circumference: Float
+    //not every shape has diameter so dont include that
+    //all shapes nwo need area and circumference.
+}
+//DATA CLASS WITH INTERFACE
+//after the class colons (), add Shape.
+data class RectangleShape(
+    val width: Float,
+    val height: Float,
+): Shape {
+    //go into top left 3 bars menu, code, then implement methods
+    //will automatically add all this
+    //a shape interface needs area and circumference.
+    override val area: Float
+        get() = TODO("Not yet implemented")
+    override val circumference: Float
+        get() = TODO("Not yet implemented")
+}
+data class CircleShape(val radius: Float): Shape {
+    override val circumference: Float
+        get() = TODO("Not yet implemented")
+    override val area: Float
+        get() = TODO("Not yet implemented")
     val diameter = 2 * radius
 }
